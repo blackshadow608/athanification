@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+     <link rel="stylesheet" href={% static "bootstrap/dist/css/bootstrap.css"%}>
+      <title>Регистрация</title>
+  </head>
+  <body style="padding-top: 200px">
+  <div>
+      <div class="col-md-5"></div>
+      <div class="col-md-3" style="background: aqua">
+          <form action="" method="post" >
+              {% csrf_token %}
+              <div class="form-group">
+                  <label for="id_username">Name</label>
+                  <input id="id_username" type="text" name="username" class="form-control" placeholder="Name">
+              </div>
+              <div class="form-group">
+                  <label for="id_password">Password</label>
+                  <input id="id_password" type="password" name="password" class="form-control" placeholder="Password">
+              </div>
+              <button type="submit" class="btn btn-primary">Sign in</button>
+              <a href="{% url 'social:begin' 'twitter' %}"><img src={% static "images.png" %}/></a>
+              <a href="{% url 'social:begin' 'facebook' %}"><img src={% static "facebook.png" %}/></a>
+              <a href='{% url 'social:begin' 'vk-oauth2'%}'><img src={% static "vkontakte.png" %}/></a>
+
+          </form>
+          <br>
+          <form action="/register/"><button class="btn btn-primary" >Sign up</button></form>
+      </div>
+  </div>
+  </body>
+</html>

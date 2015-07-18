@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <link rel="stylesheet" href={% static "bootstrap/dist/css/bootstrap.css"%}>
+    <title></title>
+</head>
+<body>
+  <h1>Hello {{ user }}</h1>
+
+<form action="/solar/"><button class="btn btn-primary" >Выйти</button></form>
+</body>
+</html>
